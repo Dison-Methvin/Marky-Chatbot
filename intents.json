@@ -1,0 +1,469 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey",
+                "Good morning",
+                "Greetings",
+                "Howdy",
+                "Good evening",
+                "What's up?",
+                "Is anyone there?"
+            ],
+            "responses": [
+                "Hi there! Welcome to Methvin Marketing. How can we help your business grow today?",
+                "Hello! How can Methvin Marketing assist you with your marketing goals?",
+                "Welcome to Methvin Marketing! How can we help you achieve your business goals today?",
+                "Hi! Ready to take your marketing to the next level? Ask me anything.",
+                "Hello! Whether you need strategy, design, or digital solutions, I'm here to help."
+            ]
+        },
+        {
+            "tag": "about_company",
+            "patterns": [
+                "Who are you?",
+                "What is Methvin Marketing?",
+                "Tell me about your company",
+                "What makes you different?",
+                "What are your values?",
+                "Who is on your team?",
+                "How long have you been in business?",
+                "What is your experience?",
+                "What makes Methvin Marketing special?"
+            ],
+            "responses": [
+                "Methvin Marketing is a results-driven marketing agency helping businesses grow through digital marketing, branding, web design, and strategy.",
+                "We're a team of marketing experts dedicated to helping companies like yours stand out and succeed in a competitive market.",
+                "Our values are integrity, creativity, and measurable results. We believe in building long-term partnerships with our clients.",
+                "Our team brings years of experience in marketing, design, and technology to deliver real business growth.",
+                "We're passionate about helping businesses grow with creative, data-driven marketing.",
+                "Methvin Marketing stands out for our personalized approach and measurable results."
+            ]
+        },
+        {
+            "tag": "services",
+            "patterns": [
+                "What services do you offer?",
+                "How can you help my business?",
+                "Do you do web design?",
+                "Do you offer SEO?",
+                "What marketing solutions do you provide?",
+                "Do you do branding?",
+                "Do you run ads?",
+                "Do you offer consulting?",
+                "Can you help with social media?",
+                "Do you do content marketing?",
+                "Do you do email marketing?",
+                "Do you do PPC?",
+                "Do you do Google Ads?",
+                "Do you do Facebook Ads?",
+                "What can you do for me?",
+                "What do you provide?",
+                "Tell me about your services"
+            ],
+            "responses": [
+                "We offer a full range of marketing services: web design, branding, SEO, digital advertising, content marketing, social media management, email marketing, and strategic consulting.",
+                "Our services include website development, search engine optimization, brand identity, social media marketing, paid ads, and more.",
+                "From branding to web development, SEO to social media, we offer everything you need to grow online.",
+                "We tailor our services to your business needs\u2014let us know your goals and we'll recommend the best solutions.",
+                "Our team can handle your marketing end-to-end, or support your in-house team with specialized expertise."
+            ]
+        },
+        {
+            "tag": "web_design",
+            "patterns": [
+                "Do you offer web design?",
+                "Tell me about your web design services",
+                "Can you build websites?",
+                "How do you approach web development?",
+                "Do you create websites?",
+                "Website development services",
+                "Do you do e-commerce websites?",
+                "Can you redesign my website?"
+            ],
+            "responses": [
+                "Yes! We design and develop modern, responsive websites that help your business stand out and convert visitors into customers.",
+                "Our web design services include custom design, development, mobile optimization, e-commerce, and ongoing support.",
+                "We can redesign your existing website to improve its look, performance, and results.",
+                "We build websites that not only look great but also drive results and conversions.",
+                "Our web design process is collaborative and focused on your brand's unique story.",
+                "Need e-commerce? We create secure, scalable online stores too!"
+            ]
+        },
+        {
+            "tag": "seo",
+            "patterns": [
+                "Do you offer SEO?",
+                "Can you improve my website SEO?",
+                "What is SEO?",
+                "How does SEO work?",
+                "SEO services",
+                "Can you help me rank higher on Google?",
+                "What is search engine optimization?",
+                "How do I get more organic traffic?"
+            ],
+            "responses": [
+                "SEO (Search Engine Optimization) is about improving your website's visibility in search engines. We offer audits, keyword research, on-page and off-page optimization, and more.",
+                "We help your business rank higher on Google through comprehensive SEO strategies, including technical SEO, content, and link building.",
+                "Our SEO experts can help you climb the Google rankings and attract more qualified leads.",
+                "We use proven SEO strategies, from technical audits to content optimization and link building.",
+                "Want to see how your site is performing? Ask for a free SEO audit!"
+            ]
+        },
+        {
+            "tag": "branding",
+            "patterns": [
+                "Do you offer branding?",
+                "Can you create my brand identity?",
+                "Do you design logos?",
+                "Branding services",
+                "Help me build my brand",
+                "Can you help with rebranding?",
+                "What is brand strategy?"
+            ],
+            "responses": [
+                "We offer complete branding solutions: logo design, visual identity, brand messaging, and more.",
+                "Our branding services help you stand out and connect with your audience, whether you're starting fresh or rebranding.",
+                "A strong brand is the foundation of your business. We help you define and express it.",
+                "From logo design to brand messaging, we ensure your brand stands out and connects with your audience.",
+                "Thinking about a rebrand? We can guide you through every step."
+            ]
+        },
+        {
+            "tag": "ads",
+            "patterns": [
+                "Do you run ads?",
+                "Do you do Google Ads?",
+                "Do you do Facebook Ads?",
+                "Can you help with paid advertising?",
+                "PPC services",
+                "How do I get more leads with ads?",
+                "What is pay-per-click?"
+            ],
+            "responses": [
+                "We manage paid advertising campaigns on Google, Facebook, Instagram, and more to drive targeted traffic and leads.",
+                "Our ad services include strategy, creative, management, and optimization for maximum ROI.",
+                "We create and manage ad campaigns that deliver real ROI\u2014on Google, Facebook, Instagram, and more.",
+                "Our ad strategies are data-driven and constantly optimized for the best results.",
+                "Want to boost your leads or sales? Let's talk about a custom ad campaign."
+            ]
+        },
+        {
+            "tag": "consulting",
+            "patterns": [
+                "Do you offer consulting?",
+                "Can you help with marketing strategy?",
+                "Do you do marketing consulting?",
+                "Can I get advice?",
+                "Do you do business consulting?"
+            ],
+            "responses": [
+                "Yes! We offer marketing consulting to help you develop and execute effective strategies for growth.",
+                "Our experts can guide you on everything from digital strategy to campaign execution.",
+                "Our consulting services are designed to give you clarity and direction in your marketing.",
+                "We can audit your current efforts and help you build a roadmap for growth.",
+                "Not sure where to start? Book a strategy session with our experts."
+            ]
+        },
+        {
+            "tag": "content_marketing",
+            "patterns": [
+                "What is content marketing?",
+                "Do you do content marketing?",
+                "Can you help with blog writing?",
+                "Do you do video marketing?",
+                "What is a content strategy?"
+            ],
+            "responses": [
+                "Content marketing is about creating valuable content to attract and engage your audience. We help with blogs, videos, and more.",
+                "We can develop a content strategy and create content that drives results for your business.",
+                "Content is king! We help you create blogs, videos, and more to engage your audience.",
+                "Our content strategies are tailored to your goals\u2014whether it's brand awareness, lead generation, or sales.",
+                "Need help with blog topics or video ideas? Just ask!"
+            ]
+        },
+        {
+            "tag": "email_marketing",
+            "patterns": [
+                "Do you do email marketing?",
+                "Can you help with newsletters?",
+                "What is email marketing?",
+                "How do I grow my email list?"
+            ],
+            "responses": [
+                "Email marketing is a powerful way to nurture leads and keep customers engaged. We help with strategy, design, and automation.",
+                "We can set up and manage your email campaigns, newsletters, and automations.",
+                "Email marketing is one of the most effective ways to nurture leads and drive repeat business.",
+                "We design beautiful, high-converting emails and set up automated campaigns for you.",
+                "Want to grow your email list? We have proven tactics to help."
+            ]
+        },
+        {
+            "tag": "social_media",
+            "patterns": [
+                "Can you help with social media?",
+                "Do you do social media marketing?",
+                "What is social media marketing?",
+                "How do I grow on Instagram?",
+                "How do I get more followers?",
+                "Do you manage Facebook pages?"
+            ],
+            "responses": [
+                "We offer social media marketing services to grow your brand and engage your audience on platforms like Facebook, Instagram, and LinkedIn.",
+                "Our team can manage your social media accounts, create content, and run paid campaigns.",
+                "We manage your social media so you can focus on your business.",
+                "From content creation to community management, we help you build a loyal following.",
+                "Want to run a social media contest or campaign? We can help with that too!"
+            ]
+        },
+        {
+            "tag": "general_marketing_knowledge",
+            "patterns": [
+                "What is marketing?",
+                "What are the principles of marketing?",
+                "What is a marketing funnel?",
+                "What is inbound marketing?",
+                "What is outbound marketing?",
+                "What is a marketing plan?",
+                "What is a target audience?",
+                "What is a buyer persona?",
+                "What is lead generation?",
+                "What is conversion rate?",
+                "What is ROI in marketing?",
+                "What is digital marketing?",
+                "What is a call to action?",
+                "What is a landing page?"
+            ],
+            "responses": [
+                "Marketing is the process of promoting and selling products or services, including market research and advertising.",
+                "Marketing is all about connecting with your audience and delivering value.",
+                "A good marketing plan starts with understanding your target customer and setting clear goals."
+            ]
+        },
+        {
+            "tag": "business_tips",
+            "patterns": [
+                "Can I get some marketing tips?",
+                "Give me some marketing tips",
+                "How do I grow my business?",
+                "Any advice for my business?",
+                "Can you help me with marketing?",
+                "How do I get more customers?",
+                "How do I increase sales?",
+                "How do I build my brand?",
+                "How do I get more leads?",
+                "How do I improve my marketing?",
+                "How do I get more website visitors?",
+                "I need marketing advice",
+                "What marketing tips do you have?",
+                "Can you give me some business advice?"
+            ],
+            "responses": [
+                "I'd love to help you with personalized marketing tips! To give you the best advice, could you tell me what type of business you have? (e.g., restaurant, retail, service-based, e-commerce, etc.)",
+                "I'd be happy to provide tailored marketing advice! First, what kind of business are you running?",
+                "To give you the most relevant marketing tips, could you share what type of business you operate?"
+            ]
+        },
+        {
+            "tag": "business_type_response",
+            "patterns": [
+                "I have a restaurant",
+                "I run a retail store",
+                "I have an e-commerce business",
+                "I provide services",
+                "I have a consulting business",
+                "I run a salon",
+                "I have a fitness business",
+                "I run a real estate business",
+                "I have a tech startup",
+                "I run a healthcare practice",
+                "I have a construction business",
+                "I run a manufacturing business",
+                "I have a professional service",
+                "I run a B2B business",
+                "I have a B2C business"
+            ],
+            "responses": [
+                "Thanks for sharing! Now, could you tell me about the scale of your business? Are you a startup, small business, medium-sized, or large enterprise?",
+                "Great! To provide the most relevant tips, could you let me know your business size? (startup, small, medium, or large)",
+                "Perfect! One more thing - what's the scale of your business? Are you a startup, small business, medium-sized, or large enterprise?"
+            ]
+        },
+        {
+            "tag": "business_scale_response",
+            "patterns": [
+                "I'm a startup",
+                "We're a startup",
+                "Just starting out",
+                "We're a small business",
+                "Small business",
+                "We're medium-sized",
+                "Medium-sized business",
+                "We're a large enterprise",
+                "Large business",
+                "Enterprise level",
+                "We're growing",
+                "Established business"
+            ],
+            "responses": [
+                "Based on your {business_type} and {business_scale} status, here are some tailored marketing tips:\n\n1. Focus on building your local presence through targeted social media and community engagement\n2. Create valuable content that showcases your expertise\n3. Leverage customer testimonials and reviews\n4. Consider starting with cost-effective digital marketing channels\n5. Build an email list from day one\n\nWould you like more specific tips for any of these areas?",
+                "For your {business_type} at {business_scale} level, I recommend:\n\n1. Develop a strong brand identity that resonates with your target market\n2. Implement a content marketing strategy that addresses your customers' pain points\n3. Use social media to build relationships with your audience\n4. Consider strategic partnerships with complementary businesses\n5. Track your marketing metrics to optimize your efforts\n\nWould you like to dive deeper into any of these strategies?",
+                "Here are some targeted marketing tips for your {business_type} as a {business_scale}:\n\n1. Create a compelling value proposition that sets you apart\n2. Build a referral program to leverage word-of-mouth marketing\n3. Focus on customer retention through excellent service\n4. Use data analytics to understand your customer behavior\n5. Develop a multi-channel marketing approach\n\nWould you like more detailed advice on any of these areas?"
+            ]
+        },
+        {
+            "tag": "marketing_problems",
+            "patterns": [
+                "Why isn't my website getting traffic?",
+                "Why aren't my ads working?",
+                "How do I get more leads?",
+                "My marketing isn't working",
+                "I'm not getting results",
+                "Why is my conversion rate low?",
+                "Why is my bounce rate high?",
+                "Why am I not getting sales?",
+                "Why is my email open rate low?",
+                "Why is my social media engagement low?"
+            ],
+            "responses": [
+                "Let's dig into your analytics to find out what's working and what needs improvement.",
+                "Sometimes a small tweak\u2014like updating your website copy or targeting a new audience\u2014can make a big difference.",
+                "If you're not seeing results, it might be time for a fresh strategy. We can help!",
+                "Let's troubleshoot together! Can you share more about your current marketing efforts? For example, are you running ads, using SEO, or focusing on social media?",
+                "There could be several reasons. Let's start by reviewing your website, ad campaigns, and target audience. Would you like a free audit?"
+            ]
+        },
+        {
+            "tag": "booking",
+            "patterns": [
+                "How do I book a meeting?",
+                "Can I talk to someone?",
+                "How do I get in touch?",
+                "Schedule a call",
+                "Book a consultation",
+                "How do I contact you?",
+                "How do I request a quote?",
+                "Can I get a demo?"
+            ],
+            "responses": [
+                "You can book a free consultation with us anytime\u2014just let us know your preferred date and time.",
+                "Our team is ready to help! Share your contact info and we'll reach out to schedule a call.",
+                "Want to see our work? We can set up a demo tailored to your business.",
+                "We'd love to connect! Please let us know your preferred date and time, and we'll set up a meeting with our team.",
+                "You can book a free consultation by sharing your contact details or visiting our website's contact page."
+            ]
+        },
+        {
+            "tag": "industry_specific",
+            "patterns": [
+                "Do you work with restaurants?",
+                "Do you help e-commerce businesses?",
+                "Do you work with startups?",
+                "Do you help small businesses?",
+                "Do you work with tech companies?",
+                "Do you work with healthcare?",
+                "Do you work with real estate?",
+                "Do you work with nonprofits?",
+                "Do you work with education?",
+                "Do you work with finance companies?"
+            ],
+            "responses": [
+                "We've helped restaurants, e-commerce stores, tech startups, and more achieve their marketing goals.",
+                "Every industry is unique\u2014we'll tailor our approach to fit your business.",
+                "Not sure if we have experience in your field? Just ask!",
+                "We work with a wide range of industries, including restaurants, e-commerce, startups, tech, healthcare, real estate, education, finance, and more.",
+                "No matter your industry, we tailor our solutions to fit your goals."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "Appreciate it",
+                "Thanks for your help",
+                "Much appreciated"
+            ],
+            "responses": [
+                "You're welcome! If you have more questions, just ask.",
+                "Happy to help! Let us know if you need anything else.",
+                "You're welcome! We're always here to help your business grow.",
+                "Glad I could assist. Let us know if you have more questions.",
+                "Thank you for reaching out to Methvin Marketing!"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "Goodbye",
+                "See you later",
+                "Talk soon",
+                "Farewell",
+                "Catch you later"
+            ],
+            "responses": [
+                "Goodbye! Wishing you success with your business.",
+                "See you soon! Reach out anytime you need marketing support.",
+                "Goodbye! Wishing you lots of success. Come back anytime.",
+                "Take care! We're here whenever you need marketing support.",
+                "See you soon! Keep growing your business."
+            ]
+        },
+        {
+            "tag": "small_talk",
+            "patterns": [
+                "How are you?",
+                "Are you a real person?",
+                "Are you a chatbot?",
+                "What's your name?",
+                "What can you do?"
+            ],
+            "responses": [
+                "I'm always here to help\u201424/7!",
+                "I'm a digital assistant, but I love talking about marketing.",
+                "Ask me anything about Methvin Marketing or marketing in general!",
+                "I'm a chatbot built to help your business grow!",
+                "I'm an AI assistant designed to provide marketing guidance and answer your questions about Methvin Marketing services.",
+                "I'm here and ready to help with your marketing questions! How can I assist your business today?"
+            ]
+        },
+        {
+            "tag": "fallback",
+            "patterns": [],
+            "responses": [
+                "I'm not sure I understand. Could you please rephrase your question or ask something else about Methvin Marketing or marketing?",
+                "Sorry, I didn't catch that. Can you try asking in a different way?",
+                "If you have a marketing question or want to know more about our services, just let me know!"
+            ]
+        },
+        {
+            "tag": "schedule_consultation",
+            "patterns": [
+                "Can I schedule a consultation?",
+                "I want to schedule a meeting",
+                "Can we set up a consultation?",
+                "I'd like to book a consultation",
+                "Schedule a meeting",
+                "Book a consultation",
+                "Set up a meeting",
+                "Can we meet?",
+                "I need a consultation",
+                "How can I book a consultation?",
+                "I want to talk to someone",
+                "Can I speak with someone?",
+                "I need help with marketing",
+                "I want to discuss my business"
+            ],
+            "responses": [
+                "I'd be happy to help you schedule a consultation! Please send your meeting request to disonmethvin.education@gmail.com. Include your preferred date and time, and we'll get back to you within 24 hours to confirm the appointment.",
+                "To schedule a consultation, please email us at disonmethvin.education@gmail.com with your preferred meeting time. Our team will respond within 24 hours to confirm your appointment.",
+                "You can book a consultation by sending an email to disonmethvin.education@gmail.com. Just let us know when you'd like to meet, and we'll confirm the details with you.",
+                "To set up a consultation, please email disonmethvin.education@gmail.com with your preferred meeting time. We'll get back to you within 24 hours to confirm the appointment."
+            ]
+        }
+    ]
+}

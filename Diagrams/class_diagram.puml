@@ -1,0 +1,57 @@
+@startuml
+
+skinparam class {
+    BackgroundColor #F8F8F8
+    BorderColor #888888
+    ArrowColor #444444
+    FontColor #222222
+}
+
+skinparam shadowing false
+
+title Chatbot System - Class Diagram
+
+class Chatbot {
+    +startSession()
+    +receiveInput(input: String)
+    +sendToBackend(message: String)
+    +displayResponse(response: String)
+}
+
+class Backend {
+    +loadResources()
+    +classifyIntent(message: String): String
+    +determineAction(intent: String)
+}
+
+class IntentHandler {
+    +handleIntent(intent: String)
+    +logInteraction(data: String)
+}
+
+class GoogleCalendar {
+    +authenticate()
+    +createEvent(details: String)
+}
+
+class OpenAIIntegration {
+    +query(message: String): String
+}
+
+class UserContext {
+    +checkContext(userId: String)
+    +updateContext(data: String)
+}
+
+' Relationships
+Chatbot --> Backend : sends message
+Backend o-- IntentHandler : delegates intent
+Backend --> GoogleCalendar : for calendar intents
+Backend --> OpenAIIntegration : for fallback
+Backend --> UserContext : for context update
+Backend --> Backend : logs response
+Backend ..> UserContext : returns updated context
+Backend ..> GoogleCalendar : returns confirmation
+Backend ..> OpenAIIntegration : returns fallback response
+
+@enduml 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MethvinMarketing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="chat-wrapper">
+
+        <!-- Floating Circular Icon (Minimal Button) -->
+        <div class="chatbox__toggle" id="chatToggle">
+            <img src="{{ url_for('static', filename='images/Creative Chatting App Logo.png') }}" alt="Chat Icon" />
+            <div class="chatbox__hover-message" id="hoverMessage">👋 Need help growing your brand? Marky's here!</div>
+        </div>
+        
+
+        <!-- Hidden Chatbox -->
+        <div class="chatbox__support" id="chatBox">
+            <!-- Header -->
+            <div class="chatbox__header">
+                <div class="chatbox__header-content">
+                    <img src="{{ url_for('static', filename='images/Creative Chatting App Logo.png') }}" alt="Chat Icon" class="chatbox__logo" />
+                    <div class="chatbox__header-text">
+                        <h2 class="chatbox__title">Message with Marky!</h2>
+                        <p class="chatbox__subtitle">Business Tips from MethvinMarketing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div class="chatbox__messages" id="chat-messages"></div>
+
+            <!-- Footer Input -->
+            <div class="chatbox__footer">
+                <input type="text" id="userInput" class="chatbox__input" placeholder="Write a message..." />
+                <button type="button" class="mic_button chatbox__icon" title="Voice Input">🎤</button>
+                <button type="button" class="send_button chatbox__icon" title="Send">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputField = document.getElementById("userInput");
+            const sendBtn = document.querySelector(".send_button");
+            const voiceBtn = document.querySelector(".mic_button");
+            const chatMessages = document.getElementById("chat-messages");
+            const toggleBtn = document.getElementById("chatToggle");
+            const chatBox = document.getElementById("chatBox");
+            let typingTimeout;
+            let isTyping = false;
+
+            function showTypingIndicator() {
+                if (!isTyping) {
+                    isTyping = true;
+                    const typing = document.createElement("div");
+                    typing.className = "message__row user typing-indicator";
+                    typing.id = "typingIndicator";
+
+                    typing.innerHTML = `
+                        <img class="message__avatar" src="{{ url_for('static', filename='images/boy.png') }}" />
+                        <div class="message__bubble user">
+                            <span class="typing-dots">
+                                <span></span><span></span><span></span>
+                            </span>
+                        </div>
+                    `;
+                    chatMessages.appendChild(typing);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }
+
+            function hideTypingIndicator() {
+                const typing = document.getElementById("typingIndicator");
+                if (typing) {
+                    typing.remove();
+                    isTyping = false;
+                }
+            }
+
+            // Function to handle typing
+            function handleTyping() {
+                clearTimeout(typingTimeout);
+                showTypingIndicator();
+                
+                // Hide typing indicator after 1 second of no typing
+                typingTimeout = setTimeout(() => {
+                    hideTypingIndicator();
+                }, 1000);
+            }
+
+            // Add input event listener for typing animation
+            inputField.addEventListener("input", handleTyping);
+
+            // Toggle Chatbox Visibility
+            toggleBtn.addEventListener("click", () => {
+                chatBox.classList.toggle("chatbox--visible");
+                if (chatBox.classList.contains("chatbox--visible")) {
+                    chatBox.style.display = "flex";
+                } else {
+                    setTimeout(() => {
+                        chatBox.style.display = "none";
+                    }, 300);
+                }
+            });
+
+            function addMessage(sender, text) {
+                const row = document.createElement("div");
+                row.className = `message__row ${sender === "User" ? "user" : "bot"}`;
+
+                const avatar = document.createElement("img");
+                avatar.className = "message__avatar";
+                avatar.src = sender === "User"
+                    ? "{{ url_for('static', filename='images/boy.png') }}"
+                    : "{{ url_for('static', filename='images/Creative Chatting App Logo.png') }}";
+
+                const bubble = document.createElement("div");
+                bubble.className = `message__bubble ${sender === "User" ? "user" : "bot"}`;
+                bubble.innerText = text;
+
+                row.appendChild(avatar);
+                row.appendChild(bubble);
+                chatMessages.appendChild(row);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function sendMessage() {
+                const message = inputField.value.trim();
+                if (!message) return;
+
+                addMessage("User", message);
+                inputField.value = "";
+                showTypingIndicator();
+
+                fetch("/predict", {
+                    method: "POST",
+                    body: JSON.stringify({ message }),
+                    headers: { "Content-Type": "application/json" }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    hideTypingIndicator();
+                    addMessage("Bot", data.answer || "Sorry, I couldn't process that.");
+                })
+                .catch(() => {
+                    hideTypingIndicator();
+                    addMessage("Bot", "Oops! Something went wrong.");
+                });
+            }
+
+            function startVoiceRecognition() {
+                try {
+                    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                    recognition.lang = "en-US";
+                    recognition.interimResults = false;
+                    recognition.maxAlternatives = 1;
+
+                    recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        inputField.value = transcript;
+                    };
+
+                    recognition.onerror = (event) => {
+                        if (event.error === "no-speech") {
+                            alert("No speech detected. Please try again.");
+                        } else {
+                            alert("Voice recognition error: " + event.error);
+                        }
+                    };
+
+                    recognition.onspeechend = () => {
+                        recognition.stop();
+                    };
+
+                    recognition.start();
+                } catch (err) {
+                    alert("Speech recognition not supported.");
+                }
+            }
+
+            sendBtn.addEventListener("click", sendMessage);
+            voiceBtn.addEventListener("click", startVoiceRecognition);
+            inputField.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") sendMessage();
+            });
+        });
+    </script>
+</body>
+</html>

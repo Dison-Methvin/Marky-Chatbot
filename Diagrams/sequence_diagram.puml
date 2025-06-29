@@ -1,0 +1,75 @@
+@startuml
+
+skinparam sequence {
+    ParticipantBackgroundColor #F8F8F8
+    ParticipantBorderColor #888888
+    ArrowColor #444444
+    LifeLineBorderColor #888888
+    LifeLineBackgroundColor #F8F8F8
+    FontColor #222222
+}
+skinparam shadowing false
+
+title Chatbot System - Sequence Diagram
+
+actor User
+participant Chatbot
+participant Backend
+participant IntentHandler
+participant GoogleCalendar
+participant OpenAIIntegration
+participant UserContext
+participant ErrorHandler
+
+== User initiates interaction ==
+User -> Chatbot: startSession()
+User -> Chatbot: sendMessage(input)
+Chatbot -> UserContext: getContext(userId)
+UserContext --> Chatbot: contextData
+Chatbot -> Backend: processMessage(input, contextData)
+
+== Intent classification ==
+Backend -> Backend: loadResources()
+Backend -> Backend: classifyIntent(input)
+Backend --> Chatbot: intentType
+
+== Marketing Intent Handling ==
+Chatbot -> Backend: processMarketingIntent(intentType, input)
+Backend -> IntentHandler: handleIntent(intentType, input)
+IntentHandler -> IntentHandler: generateMarketingTips()
+IntentHandler -> UserContext: updateContext(userId, data)
+UserContext --> IntentHandler: updatedContext
+IntentHandler -> Backend: logInteraction(data)
+IntentHandler --> Backend: marketingTips
+Backend --> Chatbot: response
+
+== Calendar Intent Handling ==
+Chatbot -> Backend: processCalendarIntent(intentType, input)
+Backend -> GoogleCalendar: authenticate()
+GoogleCalendar --> Backend: authStatus
+Backend -> GoogleCalendar: createEvent(eventDetails)
+GoogleCalendar --> Backend: eventConfirmation
+Backend -> UserContext: updateContext(userId, data)
+UserContext --> Backend: updatedContext
+Backend --> Chatbot: response
+
+== Fallback Intent Handling ==
+Chatbot -> Backend: processFallbackIntent(intentType, input)
+Backend -> OpenAIIntegration: queryAPI(input)
+OpenAIIntegration --> Backend: fallbackResponse
+Backend -> UserContext: updateContext(userId, data)
+UserContext --> Backend: updatedContext
+Backend --> Chatbot: response
+
+== Error Handling ==
+Chatbot -> Backend: processError(input)
+Backend -> ErrorHandler: detectError(input)
+ErrorHandler -> ErrorHandler: classifyError(error)
+ErrorHandler -> ErrorHandler: recover(error)
+ErrorHandler --> Backend: errorResponse
+Backend --> Chatbot: errorResponse
+
+== Response delivery ==
+Chatbot -> User: displayResponse(response)
+
+@enduml 

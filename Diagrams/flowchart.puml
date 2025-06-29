@@ -1,0 +1,45 @@
+@startuml
+
+' Traditional Flowchart for Chatbot System
+' Ovals for start/end, parallelograms for input/output, rectangles for processes, diamonds for decisions
+
+start
+:Install Dependencies;
+:Import Libraries & Load Data;
+:Initialize Model & APIs;
+
+:Get User Input;
+if (User Input == 'QUIT'?) then ([yes] Quit)
+    :Display/Print Response;
+else ([no] Continue)
+    :Process Message;
+    :Classify Intent;
+    if (Intent Found?) then ([yes] Found)
+        :Switch Intent;
+        if (Intent Type == Marketing) then ([yes] Marketing)
+            :Ask Business Type;
+            :Update User Context;
+            :Generate Marketing Tips;
+        else ([no] Not Marketing)
+            if (Intent Type == Calendar) then ([yes] Calendar)
+                :Authenticate with Google Calendar;
+                :Create Calendar Event;
+                :Update User Context;
+            else ([no] Other)
+                :Handle Other Intent;
+            endif
+        endif
+        :Prepare Response;
+    else ([no] Not Found)
+        :Call OpenAI API for Fallback;
+        if (API Success?) then ([yes] Success)
+            :Return OpenAI Response;
+        else ([no] Fail)
+            :Return Error Message;
+        endif
+    endif
+    :Display/Print Response;
+endif
+stop
+
+@enduml 

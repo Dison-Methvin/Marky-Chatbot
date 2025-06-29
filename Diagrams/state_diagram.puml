@@ -1,0 +1,98 @@
+@startuml
+
+skinparam state {
+    BackgroundColor #F8F8F8
+    BorderColor #888888
+    ArrowColor #444444
+    FontColor #222222
+}
+skinparam shadowing false
+
+title Chatbot System State Diagram
+
+' Main System States
+[*] --> SystemInitialization : System Start
+
+state SystemInitialization {
+    [*] --> LoadDependencies
+    LoadDependencies --> InitializeAPIs
+    InitializeAPIs --> [*]
+}
+
+SystemInitialization --> Ready : Initialization Complete
+
+state Ready {
+    [*] --> Idle
+    Idle --> ProcessingUserInput : User sends message
+    ProcessingUserInput --> IntentClassification
+    IntentClassification --> ResponseGeneration
+    ResponseGeneration --> ResponseDelivery
+    ResponseDelivery --> Idle
+}
+
+' Intent Processing States
+state IntentProcessing {
+    [*] --> MarketingIntent
+    [*] --> CalendarIntent
+    [*] --> GeneralQueryIntent
+    [*] --> FallbackIntent
+}
+
+' Marketing Flow
+state MarketingFlow {
+    [*] --> BusinessTypeAnalysis
+    BusinessTypeAnalysis --> BusinessScaleAnalysis
+    BusinessScaleAnalysis --> GenerateMarketingTips
+    GenerateMarketingTips --> DeliverTips
+    DeliverTips --> [*]
+}
+
+' Calendar Integration
+state CalendarIntegration {
+    [*] --> GoogleAuth
+    GoogleAuth --> CalendarAccess
+    CalendarAccess --> EventCreation
+    EventCreation --> EventConfirmation
+    EventConfirmation --> [*]
+}
+
+' OpenAI Integration
+state OpenAIIntegration {
+    [*] --> QueryFormulation
+    QueryFormulation --> APIRequest
+    APIRequest --> ResponseProcessing
+    ResponseProcessing --> [*]
+}
+
+' User Context Management
+state UserContextManagement {
+    [*] --> ContextRetrieval
+    ContextRetrieval --> ContextUpdate
+    ContextUpdate --> ContextStorage
+    ContextStorage --> [*]
+}
+
+' Error Handling
+state ErrorHandling {
+    [*] --> ErrorDetection
+    ErrorDetection --> ErrorClassification
+    ErrorClassification --> ErrorRecovery
+    ErrorRecovery --> [*]
+}
+
+' State Transitions
+Ready --> IntentProcessing : Message Received
+IntentProcessing --> MarketingFlow : Marketing Intent Detected
+IntentProcessing --> CalendarIntegration : Calendar Intent Detected
+IntentProcessing --> OpenAIIntegration : Fallback Required
+IntentProcessing --> UserContextManagement : Context Update Needed
+IntentProcessing --> ErrorHandling : Error Detected
+
+' Connect all sub-state machine final states to the end point
+MarketingFlow --> [*]
+CalendarIntegration --> [*]
+OpenAIIntegration --> [*]
+UserContextManagement --> [*]
+ErrorHandling --> [*]
+
+@enduml

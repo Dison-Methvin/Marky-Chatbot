@@ -1,0 +1,43 @@
+@startuml
+' Decision Tree for Chatbot System
+skinparam monochrome true
+skinparam defaultFontName "Arial"
+
+' Root node
+:User Input;
+if (Is input 'QUIT'?) then ([yes])
+  :Display/Print Response;
+else ([no])
+  if (Intent Found?) then ([yes])
+    if (Intent Type == Marketing) then ([yes])
+      :Ask Business Type;
+      :Update User Context;
+      :Generate Marketing Tips;
+      :Prepare Response;
+      :Display/Print Response;
+    else ([no])
+      if (Intent Type == Calendar) then ([yes])
+        :Authenticate with Google Calendar;
+        :Create Calendar Event;
+        :Update User Context;
+        :Prepare Response;
+        :Display/Print Response;
+      else ([no])
+        :Handle Other Intent;
+        :Prepare Response;
+        :Display/Print Response;
+      endif
+    endif
+  else ([no])
+    :Call OpenAI API for Fallback;
+    if (API Success?) then ([yes])
+      :Return OpenAI Response;
+      :Display/Print Response;
+    else ([no])
+      :Return Error Message;
+      :Display/Print Response;
+    endif
+  endif
+endif
+stop
+@enduml 

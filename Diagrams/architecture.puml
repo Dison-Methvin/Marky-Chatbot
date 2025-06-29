@@ -1,0 +1,166 @@
+@startuml Marketing Chatbot System Architecture
+
+' Styling
+skinparam backgroundColor white
+skinparam handwritten false
+skinparam componentStyle rectangle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam roundCorner 20
+skinparam shadowing true
+skinparam padding 8
+skinparam nodesep 80
+skinparam ranksep 100
+
+' Title
+title Marketing Chatbot System Architecture
+
+' Layout direction
+left to right direction
+
+' Layout hints
+together {
+    package "Frontend Layer" {
+        [Web Interface] as UI
+        [HTML Templates] as Templates
+        [Static Assets] as Assets
+    }
+}
+
+together {
+    package "Backend Layer" {
+        [Flask Application] as Flask
+        [API Endpoints] as API
+        [Request Handler] as Handler
+    }
+}
+
+' Force Core Services to stay together
+package "Core Services" {
+    [Intent Classification] as Intent
+    [Response Generation] as Response
+    [Context Manager] as Context
+    [Chat Service] as Chat
+}
+
+' Keep AI/ML and Data Management side by side
+together {
+    package "AI/ML Components" {
+        [Neural Network Model] as NN
+        [NLTK Processing] as NLTK
+        [OpenAI Integration] as OpenAI
+        [Google Calendar API] as Calendar
+    }
+}
+
+together {
+    package "Data Management" {
+        [Database Manager] as DB
+        [SQLite Database] as SQLite
+        [JSON Logs] as JSONLogs
+        [CSV Logs] as CSVLogs
+        [Data Export] as Export
+    }
+}
+
+together {
+    package "Training Pipeline" {
+        [Model Training] as Training
+        [Data Preprocessing] as Preprocess
+        [Fine-tuning] as FineTune
+        [Model Evaluation] as Eval
+    }
+}
+
+together {
+    package "Security" {
+        [Authentication] as Auth
+        [Authorization] as Authz
+        [API Key Management] as Keys
+        [Rate Limiting] as Rate
+    }
+}
+
+together {
+    package "Deployment" {
+        [Containerization] as Docker
+        [CI/CD Pipeline] as Pipeline
+        [Monitoring] as Monitor
+        [Scaling] as Scale
+    }
+}
+
+' Main Flow
+UI -down-> API
+API -down-> Handler
+Handler -down-> Chat
+Chat -down-> Intent
+Chat -down-> Response
+Chat -down-> Context
+
+' AI/ML Connections
+Intent -right-> NN
+Intent -right-> NLTK
+Chat -right-> OpenAI
+Chat -right-> Calendar
+
+' Data Flow
+Response -down-> DB
+DB -down-> SQLite
+DB -down-> JSONLogs
+DB -down-> CSVLogs
+DB -down-> Export
+
+' Training Flow
+Training -down-> Preprocess
+Training -right-> NN
+FineTune -right-> NN
+Eval -right-> NN
+
+' Security Connections
+Auth -left-> API
+Authz -left-> Handler
+Keys -left-> OpenAI
+Rate -left-> API
+
+' Deployment Connections
+Docker -right-> Flask
+Pipeline -right-> Training
+Monitor -right-> Flask
+Scale -right-> Flask
+
+' Notes
+note right of UI
+  Serves the web interface
+  and handles user interactions
+  - Responsive design
+  - Real-time updates
+end note
+
+note right of Chat
+  Manages conversation flow
+  and context handling
+  - State management
+  - Multi-turn conversations
+  - Fallback mechanisms
+end note
+
+note right of DB
+  Handles data persistence
+  and logging across multiple
+  storage systems
+  - Transaction management
+  - Data backup
+  - Audit logging
+end note
+
+note right of Training
+  Handles model training
+  and continuous learning
+  from interactions
+  - Automated retraining
+  - Performance monitoring
+  - Model versioning
+end note
+
+@enduml 

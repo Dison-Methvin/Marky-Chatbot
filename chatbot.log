@@ -1,0 +1,93 @@
+2025-04-29 17:42:10,239 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-04-29 17:44:59,727 - WARNING - Error while downloading from https://huggingface.co/distilbert-base-uncased/resolve/main/model.safetensors: HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Read timed out.
+Trying to resume download...
+2025-04-29 17:45:17,493 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-04-29 18:15:06,811 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-04-29 18:24:04,404 - INFO - Could not import comtypes.gen, trying to create it.
+2025-04-29 18:24:04,405 - INFO - Created comtypes.gen directory: 'C:\Users\dison\AppData\Roaming\Python\Python313\site-packages\comtypes\gen'
+2025-04-29 18:24:04,406 - INFO - Writing __init__.py file: 'C:\Users\dison\AppData\Roaming\Python\Python313\site-packages\comtypes\gen\__init__.py'
+2025-04-29 18:24:04,408 - INFO - Using writeable comtypes cache directory: 'C:\Users\dison\AppData\Roaming\Python\Python313\site-packages\comtypes\gen'
+2025-04-29 18:24:04,433 - INFO - Could not import comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4: No module named 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4'
+2025-04-29 18:24:04,438 - INFO - # Generating comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4
+2025-04-29 18:24:04,494 - INFO - # Generating comtypes.gen.SpeechLib
+2025-04-29 18:24:04,499 - INFO - Could not import comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0: No module named 'comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0'
+2025-04-29 18:24:04,501 - INFO - # Generating comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0
+2025-04-29 18:24:04,506 - INFO - # Generating comtypes.gen.stdole
+2025-04-29 18:24:04,798 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-29 18:24:04,798 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-29 18:24:04,819 - INFO -  * Restarting with watchdog (windowsapi)
+2025-04-29 18:24:14,465 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\dison\\AppData\\Roaming\\Python\\Python313\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-04-29 18:24:14,465 - INFO - Using writeable comtypes cache directory: 'C:\Users\dison\AppData\Roaming\Python\Python313\site-packages\comtypes\gen'
+2025-04-29 18:24:14,648 - WARNING -  * Debugger is active!
+2025-04-29 18:24:14,653 - INFO -  * Debugger PIN: 411-762-602
+2025-04-29 18:24:14,870 - INFO - Request: GET http://127.0.0.1:5000/ - Body: b''
+2025-04-29 18:24:14,875 - INFO - Response: 200 - <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Chat support</h4>
+                        <p class="chatbox__description--header">Hi. My name is Sam. How can I help you?</p>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button type="button" class="chatbox__send--footer send__button">Send</button>
+                </div>
+            </div>
+            <div class="chatbox__button">
+                <button type="button" title="Open chatbox"><img src="/static/images/chatbox-icon.svg" alt="Chatbox icon" /></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to pass SCRIPT_ROOT from Flask to JavaScript -->
+    <script>
+        var SCRIPT_ROOT = """";
+    </script>
+
+    <!-- Link to the JavaScript file -->
+    <script type="text/javascript" src="/static/app.js"></script>
+
+</body>
+
+</html>
+2025-04-29 18:24:14,877 - INFO - 127.0.0.1 - - [29/Apr/2025 18:24:14] "GET / HTTP/1.1" 200 -
+2025-04-29 18:24:14,910 - INFO - Request: GET http://127.0.0.1:5000/static/style.css - Body: b''
+2025-04-29 18:24:14,913 - INFO - Request: GET http://127.0.0.1:5000/static/images/chatbox-icon.svg - Body: b''
+2025-04-29 18:24:14,958 - INFO - Request: GET http://127.0.0.1:5000/static/app.js - Body: b''
+2025-04-29 18:24:15,062 - INFO - 127.0.0.1 - - [29/Apr/2025 18:24:15] "[35m[1mGET /static/style.css HTTP/1.1[0m" 500 -
+2025-04-29 18:24:15,066 - INFO - 127.0.0.1 - - [29/Apr/2025 18:24:15] "[35m[1mGET /static/images/chatbox-icon.svg HTTP/1.1[0m" 500 -
+2025-04-29 18:24:15,114 - INFO - 127.0.0.1 - - [29/Apr/2025 18:24:15] "[35m[1mGET /static/app.js HTTP/1.1[0m" 500 -
+2025-04-29 18:24:15,191 - INFO - Request: GET http://127.0.0.1:5000/favicon.ico - Body: b''
+2025-04-29 18:24:15,191 - WARNING - Not Found: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-04-29 18:24:15,192 - INFO - Response: 404 - {
+  "error": "The requested resource was not found."
+}
+
+2025-04-29 18:24:15,192 - INFO - 127.0.0.1 - - [29/Apr/2025 18:24:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-29 18:24:29,855 - INFO -  * Detected change in 'c:\\Users\\dison\\OneDrive\\Documents\\chatbot-deployment-main\\chatbot-deployment-main\\app.py', reloading
+2025-04-29 18:24:29,856 - INFO -  * Detected change in 'c:\\Users\\dison\\OneDrive\\Documents\\chatbot-deployment-main\\chatbot-deployment-main\\app.py', reloading
+2025-04-29 18:24:29,857 - INFO -  * Detected change in 'c:\\Users\\dison\\OneDrive\\Documents\\chatbot-deployment-main\\chatbot-deployment-main\\app.py', reloading
+2025-04-29 18:24:31,515 - INFO -  * Restarting with watchdog (windowsapi)
+2025-04-29 18:24:46,091 - INFO -  * Restarting with watchdog (windowsapi)
+2025-04-29 18:25:04,944 - INFO -  * Restarting with watchdog (windowsapi)
