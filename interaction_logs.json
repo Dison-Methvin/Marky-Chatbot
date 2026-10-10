@@ -1553,5 +1553,45 @@
         "timestamp": "2025-05-18T17:44:02.507837",
         "user_message": "can i get some marketing tips",
         "bot_response": "Sure! To give you the best marketing tips, can you tell me what type of business you have? (e.g., education, restaurant, retail, etc.)"
+    },
+    {
+        "timestamp": "2025-08-17T09:15:58.093621",
+        "user_message": "hi",
+        "bot_response": "Hello! Whether you need strategy, design, or digital solutions, I'm here to help."
+    },
+    {
+        "timestamp": "2025-08-17T09:15:58.120443",
+        "user_message": "hi",
+        "bot_response": "Hello! Whether you need strategy, design, or digital solutions, I'm here to help."
+    },
+    {
+        "timestamp": "2025-08-17T09:16:18.507850",
+        "user_message": "can i get some marketing ideas",
+        "bot_response": "Sure! To give you the best marketing tips, can you tell me what type of business you have? (e.g., education, restaurant, retail, etc.)"
+    },
+    {
+        "timestamp": "2025-08-17T09:16:18.537113",
+        "user_message": "can i get some marketing ideas",
+        "bot_response": "Sure! To give you the best marketing tips, can you tell me what type of business you have? (e.g., education, restaurant, retail, etc.)"
+    },
+    {
+        "timestamp": "2025-08-17T09:16:27.486467",
+        "user_message": "resturant",
+        "bot_response": "Got it! Is your business a startup, small business, medium-sized, or large enterprise?"
+    },
+    {
+        "timestamp": "2025-08-17T09:16:27.515174",
+        "user_message": "resturant",
+        "bot_response": "Got it! Is your business a startup, small business, medium-sized, or large enterprise?"
+    },
+    {
+        "timestamp": "2025-08-17T09:16:36.513176",
+        "user_message": "small",
+        "bot_response": "Thanks for sharing! For a small resturant, focus on strong branding, a professional website, and targeted social ads. If you want more tailored tips, let me know more about your business goals!"
+    },
+    {
+        "timestamp": "2025-08-17T09:16:36.544134",
+        "user_message": "small",
+        "bot_response": "Thanks for sharing! For a small resturant, focus on strong branding, a professional website, and targeted social ads. If you want more tailored tips, let me know more about your business goals!"
     }
 ]
